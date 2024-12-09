@@ -13,7 +13,7 @@ public class Sorting {
         printArray();
 
         // Sort the array
-        bubbleSort();
+        insertionSort();
 
         System.out.println("Sorted Array:");
         printArray();
@@ -51,6 +51,8 @@ public class Sorting {
         }
     }
 
+
+
     public void bubbleSort() {
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = 0; j < array.length - 1 - i; j++) {
@@ -64,6 +66,24 @@ public class Sorting {
 
 
     }
+
+    public void insertionSort() {
+        for (int i = 1; i < array.length; i++) {
+            int key = array[i];
+            int j = i - 1;
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j = j - 1;
+
+            }
+            array[j + 1] = key;
+
+        }
+
+
+    }
+
+
     // Main method
     public static void main(String[] args) {
         Sorting sorter = new Sorting(10);
